@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace PracticaWinForms.Business
 {
     public class StorageManager
-    {       
+    {   
 
         /// <summary>
         /// Get the content from file and if the file does not exist throw exception

@@ -64,5 +64,19 @@ namespace PracticaWinForms.Business
             if (Purchases == null) { Purchases = new List<Purchase>(); }
         }
 
+        public static void SaveProducts(string Content)
+        {
+            storage.SaveStorageFile(ProductsFile, Content);
+        }
+
+        public static void SavePurchases(string Content)
+        {
+            storage.SaveStorageFile(PurchasesFile, Content);
+        }
+
+        public static void SaveUsers(string Content)
+        {
+            storage.SaveStorageFile(UsersFile, Content);
+        }
     }
 }

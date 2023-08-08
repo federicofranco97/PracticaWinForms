@@ -1,4 +1,5 @@
-﻿using PracticaWinForms.Business;
+﻿using Newtonsoft.Json;
+using PracticaWinForms.Business;
 using PracticaWinForms.Data.Model;
 using System;
 using System.Collections.Generic;
@@ -24,8 +25,15 @@ namespace PracticaWinForms
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Save the info in Txts
-
+            //Save the list of products
+            var jsonProducts = JsonConvert.SerializeObject(Engine.Products);            
+            Engine.SaveProducts(jsonProducts);
+            //Save the list of purchases
+            var jsonPurchases = JsonConvert.SerializeObject(Engine.Purchases);
+            Engine.SavePurchases(jsonPurchases);
+            //Save the list of users
+            //TO DO
+            Application.Exit();
         }
 
         private void TxtProdPrice_KeyPress(object sender, KeyPressEventArgs e)
@@ -87,7 +95,8 @@ namespace PracticaWinForms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            if(currentPurchase.ProductList.Count > 0)
+                Engine.Purchases.Add(currentPurchase);
         }
 
         private void btnSaveProduct_Click(object sender, EventArgs e)
