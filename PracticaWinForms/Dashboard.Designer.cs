@@ -49,8 +49,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lstHistory = new System.Windows.Forms.ListBox();
+            this.lstHistoryDetail = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPurchase.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProdStock)).BeginInit();
             this.SuspendLayout();
@@ -163,13 +168,17 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.lstHistoryDetail);
+            this.tabPage2.Controls.Add(this.lstHistory);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1023, 566);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Users";
+            this.tabPage2.Text = "History";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
@@ -269,6 +278,43 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Add New Product";
             // 
+            // lstHistory
+            // 
+            this.lstHistory.FormattingEnabled = true;
+            this.lstHistory.ItemHeight = 20;
+            this.lstHistory.Location = new System.Drawing.Point(22, 74);
+            this.lstHistory.Name = "lstHistory";
+            this.lstHistory.Size = new System.Drawing.Size(309, 484);
+            this.lstHistory.TabIndex = 0;
+            this.lstHistory.SelectedIndexChanged += new System.EventHandler(this.lstHistory_SelectedIndexChanged);
+            // 
+            // lstHistoryDetail
+            // 
+            this.lstHistoryDetail.FormattingEnabled = true;
+            this.lstHistoryDetail.ItemHeight = 20;
+            this.lstHistoryDetail.Location = new System.Drawing.Point(415, 74);
+            this.lstHistoryDetail.Name = "lstHistoryDetail";
+            this.lstHistoryDetail.Size = new System.Drawing.Size(579, 484);
+            this.lstHistoryDetail.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(129, 20);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Purchase History";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(411, 37);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 20);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Details";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +327,8 @@
             this.tabControl.ResumeLayout(false);
             this.tabPurchase.ResumeLayout(false);
             this.tabPurchase.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProdStock)).EndInit();
@@ -311,5 +359,9 @@
         private System.Windows.Forms.TextBox txtProdName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox lstHistoryDetail;
+        private System.Windows.Forms.ListBox lstHistory;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

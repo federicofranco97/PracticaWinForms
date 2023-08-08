@@ -58,8 +58,12 @@ namespace PracticaWinForms
             currentPurchase.Total = 0;
             lstProducts.DisplayMember = "Name";
             lstProducts.ValueMember = "ID";
-            lstPurchase.DisplayMember = "Name";
+            lstPurchase.DisplayMember = "DisplayValue";
             lstPurchase.ValueMember = "ID";
+            lstHistory.Items.Clear();
+            lstHistory.Items.AddRange(Engine.Purchases.ToArray());
+            lstHistory.DisplayMember = "DisplayValue";
+            lstHistory.ValueMember = "ID";            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -97,6 +101,9 @@ namespace PracticaWinForms
         {
             if(currentPurchase.ProductList.Count > 0)
                 Engine.Purchases.Add(currentPurchase);
+            //Reload the list
+            lstHistory.Items.Clear();
+            lstHistory.Items.AddRange(Engine.Purchases.ToArray());
         }
 
         private void btnSaveProduct_Click(object sender, EventArgs e)
@@ -110,6 +117,8 @@ namespace PracticaWinForms
             //Reload the list
             lstProducts.Items.Clear();
             lstProducts.Items.AddRange(Engine.Products.ToArray());
+            //Clear the values.
+            btnClearProduct.PerformClick();
         }
 
         private void btnClearProduct_Click(object sender, EventArgs e)
@@ -117,6 +126,16 @@ namespace PracticaWinForms
             txtProdName.Text = "";
             txtProdPrice.Text = "";
             numProdStock.Value = 0;
+        }
+
+        private void lstHistory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Get the selected purchase
+            var selectedPurchase = (Purchase)lstHistory.SelectedItem;
+            lstHistoryDetail.Items.Clear();
+            lstHistoryDetail.Items.AddRange(selectedPurchase.ProductList.ToArray());
+            lstHistoryDetail.DisplayMember = "DisplayValue";
+            lstHistoryDetail.ValueMember = "ID";
         }
     }
 }
