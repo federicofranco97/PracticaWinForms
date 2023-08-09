@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticaWinForms.Data", "Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticaWinForms.Business", "PracticaWinForms.Engine\PracticaWinForms.Business.csproj", "{5E144843-3CC2-4B78-8C2A-DFFAD76D4E06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica.Linq", "Practica.Linq\Practica.Linq.csproj", "{36B96778-4460-4932-9A9F-5ECFE764757A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5E144843-3CC2-4B78-8C2A-DFFAD76D4E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E144843-3CC2-4B78-8C2A-DFFAD76D4E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E144843-3CC2-4B78-8C2A-DFFAD76D4E06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36B96778-4460-4932-9A9F-5ECFE764757A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B96778-4460-4932-9A9F-5ECFE764757A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B96778-4460-4932-9A9F-5ECFE764757A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B96778-4460-4932-9A9F-5ECFE764757A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
