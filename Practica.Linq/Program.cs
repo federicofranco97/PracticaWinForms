@@ -1,4 +1,5 @@
-﻿using Practica.Linq.Helpers;
+﻿using Newtonsoft.Json;
+using Practica.Linq.Helpers;
 using PracticaWinForms.Data.Model;
 using System;
 using System.Collections.Generic;
@@ -70,7 +71,13 @@ namespace Practica.Linq
             //Contar cuantos usuarios hay de tipo Usuario
             int practica6 = 0;
             Console.WriteLine(validator.Mensaje("Practica 6", validator.Validar6(practica6, UserList)));
-            
+
+            //Demo JSON Pone breakpoints y fijate como queda            
+            //Esto lo convierte una clase a string 
+            string ClaseSerializada = JsonConvert.SerializeObject(practica1);
+            //Esto convierte el Json string en una clase de c#
+            User usuarioDesserializado = JsonConvert.DeserializeObject<User>(ClaseSerializada);
+
             //Fin del programa.
             Console.ReadLine();
         }
