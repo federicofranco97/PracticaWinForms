@@ -41,7 +41,7 @@ namespace Practica.Linq
             //Podes aplicarles funciones una vez que tenes un objeto o una lista por ej:
             var cantidadAdmins = UserList.Where(u=> u.UserRole == Role.Administrator).ToList().Count;
             //OJO con este, porque si no existe un usuario admin rompe, pq estas accediendo a una propiedad de un null. Siempre mejor primero traer el obj y despues acceder a props
-            var nombrePrimerAdmin = UserList.FirstOrDefault(u => u.UserRole == Role.Administrator).UserName; 
+            var nombrePrimerAdmin = UserList.FirstOrDefault(u => u.UserRole == Role.Administrator).UserName;
 
             /*
              * PRACTICA
@@ -49,27 +49,27 @@ namespace Practica.Linq
              * NO mires el validator pq ahi esta como se hace la idea es que lo saques vos
              */
             //Trae el usuario que se llama Marcos (tene en cuenta que es case sensitive).            
-            User practica1 = null;
+            User practica1 = UserList.FirstOrDefault(user => user.UserName == "Marcos");
             Console.WriteLine(validator.Mensaje("Practica 1", validator.Validar1(practica1, UserList)));
-            
+
             //Trae Todos los usuarios que sean administrador            
-            List<User> practica2 = null;
+            List<User> practica2 = UserList.Where(user => user.UserRole == Role.Administrator).ToList();
             Console.WriteLine(validator.Mensaje("Practica 2", validator.Validar2(practica2, UserList)));
-            
+
             //Traer todos los productos con precios mayor a 50$
-            List<Product> practica3 = null;
+            List<Product> practica3 = ProductList.Where(product => product.Price > 50).ToList();
             Console.WriteLine(validator.Mensaje("Practica 3", validator.Validar3(practica3, ProductList)));
-            
+
             //Traer todos los productos con stock menores a 20
-            List<Product> practica4 = null;
+            List<Product> practica4 = ProductList.Where(product => product.Stock < 20).ToList();
             Console.WriteLine(validator.Mensaje("Practica 4", validator.Validar4(practica4, ProductList)));
-            
+
             //Contar cuantos usuarios hay de tipo Administrador
-            int practica5 = 0;
+            int practica5 = UserList.Where(us => us.UserRole == Role.Administrator).ToList().Count; ;
             Console.WriteLine(validator.Mensaje("Practica 5", validator.Validar5(practica5, UserList)));
-            
+
             //Contar cuantos usuarios hay de tipo Usuario
-            int practica6 = 0;
+            int practica6 = UserList.Where(user => user.UserRole == Role.User).ToList().Count; ;
             Console.WriteLine(validator.Mensaje("Practica 6", validator.Validar6(practica6, UserList)));
 
             //Demo JSON Pone breakpoints y fijate como queda            
